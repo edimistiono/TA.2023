@@ -1,0 +1,285 @@
+Delivered-To: e.mistiono@gmail.com
+Received: by 2002:a50:3a8e:0:b0:200:8126:5b42 with SMTP id v14csp1274273ecc;
+        Mon, 13 Mar 2023 01:50:54 -0700 (PDT)
+X-Google-Smtp-Source: AK7set8Q17z4UHdrKJ017Naz2k95bPjvD5O93JZw7n/+ddjS/zzrdr0BHGojNDT7MfulG/zrhIUs
+X-Received: by 2002:a5b:1c1:0:b0:b37:cd3f:808 with SMTP id f1-20020a5b01c1000000b00b37cd3f0808mr6950522ybp.26.1678697454197;
+        Mon, 13 Mar 2023 01:50:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1678697454; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0NgV9HGB1CdMrCxgpZmi/ozaGbBBZjrqM+uNyTwzclifjHTAghJUq+efVa3fBlKpmf
+         MTlAFlOBnf7DdC6pxJbAhgxmcbZvtcc/EQcTVrRt7rrBtm/SLb8w1M9WjWQuonbNcxqq
+         T9bRDCsJDy/y8lnVC6bo1+3W88gzOPSqQIm6E6YQPvwPUT9IzOC73ZSj0wM0vluPdEDG
+         oky4L1UEQvnp6W9Puf97zUDwzBbyytZTHb1Y5/VIOldsLYvcglL5jG/I6FzzyJSS2E00
+         etzE3s8FASTvNiYS/kJxbgJmHSeIf2cjiM/6EQ31Cbs66mGF6F0HAQcnh0QJbYnJr6/1
+         5iww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:message-id:date:from:subject:content-transfer-encoding
+         :mime-version:dkim-signature:dkim-signature;
+        bh=QldZIhmTIVITWA4fUyPp1tnU2766tfeOVTVlIco6OGA=;
+        b=IBzNvaYJNVIcDVdKdGHWplBwGlki2ll4Z64L5MKdGiTU1Hj4vluYTiU48CuPjn98os
+         MgEKKgUavaKll/Jg0fgfiuGN1qgHvScNztZk8yQjYN96xaAhEpSwlZZkHD2vCpZaWpg+
+         Cq1FC/kfLTHLFNuSg5GJL3yQX496p7Bc/reAvt3iLLPZyMhK6dMMn2PiFMmhMZvZWwQN
+         wYieubyWBxWybng4XT1+83Pm3tkmQW0h0JrQORzlhaqJz1PY0vcDzgsvRqg7ongnWSbX
+         OA0PKpvv3ftORKZVM1rqFa5TszC480jJPk68/bQD6WIhDlEjS8aSZSgHNQGxk9/ZqtHO
+         DH6A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@danacita.co.id header.s=s1 header.b=FQmZGdFp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=DPDNZpXO;
+       spf=pass (google.com: domain of bounces+23619775-eb84-e.mistiono=gmail.com@em1095.danacita.co.id designates 168.245.50.90 as permitted sender) smtp.mailfrom="bounces+23619775-eb84-e.mistiono=gmail.com@em1095.danacita.co.id";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=danacita.co.id
+Return-Path: <bounces+23619775-eb84-e.mistiono=gmail.com@em1095.danacita.co.id>
+Received: from xvfrpnrx.outbound-mail.sendgrid.net (xvfrpnrx.outbound-mail.sendgrid.net. [168.245.50.90])
+        by mx.google.com with ESMTPS id z2-20020a5b0b02000000b00b3f987163d3si1075664ybp.449.2023.03.13.01.50.53
+        for <e.mistiono@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 13 Mar 2023 01:50:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+23619775-eb84-e.mistiono=gmail.com@em1095.danacita.co.id designates 168.245.50.90 as permitted sender) client-ip=168.245.50.90;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@danacita.co.id header.s=s1 header.b=FQmZGdFp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=DPDNZpXO;
+       spf=pass (google.com: domain of bounces+23619775-eb84-e.mistiono=gmail.com@em1095.danacita.co.id designates 168.245.50.90 as permitted sender) smtp.mailfrom="bounces+23619775-eb84-e.mistiono=gmail.com@em1095.danacita.co.id";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=danacita.co.id
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=danacita.co.id;
+	h=content-type:mime-version:content-transfer-encoding:subject:from:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=QldZIhmTIVITWA4fUyPp1tnU2766tfeOVTVlIco6OGA=;
+	b=FQmZGdFpBPNwaEGr5EkGaHhsLUa/Mu/Galj1eJfIUnwAOe+Y3q9Q+S0fkIErnQXu9ePl
+	2aOZpg0rV2e8EgJ94SeiwwV6dhg+L7dqbFDqR8jZ7Tz2W+L3bLcTtWPCEgOaPEP9T9lMRC
+	ovcAZxKF7mEatgszxfm06EfmtmP210uVq/II++B+HfcOsLiSGB4JdFDt5b+dZ20CVMkBoS
+	KNnHuEWyWLRUJL6t+/tQAAe+2tv88fyBdsAFLDtl37oYdJzaiNsG5Qs+UH6OiQkwidoaNQ
+	fA1lIPXxd6gF/4zcIWGH+bIWZ/Xn6rJHlQb00U3rk8zR/PVV+Bp8hoCb5VzFg2cA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:mime-version:content-transfer-encoding:subject:from:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=QldZIhmTIVITWA4fUyPp1tnU2766tfeOVTVlIco6OGA=;
+	b=DPDNZpXONQ+dnEesBFIghYG0QgsCD+bSxCLmNUi2e7oFBrNwmmsEfbOG4YMKFsN8yDTg
+	yy5K8R2LWA3v5gkHO4Y5ULtN4isc0yzKUy+rIq/3rm6eb07kxFEqIAxQFEydXCEshdAYJn
+	1jliIF7WRnD7pCzsNn1cAEu72gbZ9hdfw=
+Received: by filterdrecv-59cb65cf6d-7cbts with SMTP id filterdrecv-59cb65cf6d-7cbts-1-640EE3ED-1
+        2023-03-13 08:50:53.243371446 +0000 UTC m=+1675165.764035175
+Received: from worker-hiprio-deployment-8594c967bd-smxnj (unknown)
+	by geopod-ismtpd-2 (SG) with ESMTP
+	id mZxaSnVyT6OHTEl7IOiprQ
+	Mon, 13 Mar 2023 08:50:52.924 +0000 (UTC)
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: [Danacita] Selamat! Biaya Pendidikan Kamu Berhasil Dibayarkan
+ =?UTF-8?B?8J+OiQ==?=
+From: Danacita <info@danacita.co.id>
+Date: Mon, 13 Mar 2023 08:50:53 +0000 (UTC)
+Message-ID: 
+ <167869745286.12.3586025095345619093@worker-hiprio-deployment-8594c967bd-smxnj>
+X-Feedback-ID: 23619775:SG
+X-SG-EID: 
+ =?us-ascii?Q?FjmpEi6IdFryziU+ltgoS2NvGfuKXNkS3Td1SAUzDkwYvIHz=2FQFirTaflsMR7n?=
+ =?us-ascii?Q?Oo7+itaZ9gcCsN4GR4ipmwrTrDEcwpGGfOTJH2k?=
+ =?us-ascii?Q?Tj4+jreRNdPZC3CMmtrZ1WQ2GB82FSBe=2FtOEZwL?=
+ =?us-ascii?Q?v+0tSxPr8ZF9ttNuQ+6VmEGw5gaCu8Lc7QTr3xs?=
+ =?us-ascii?Q?Ek9rshMTN8NF7PCkNJX1aBecM4=2FQp07svS+=2FULo?=
+ =?us-ascii?Q?dutZZaIChC2NWLC0=2F54gMVa0WBnIxjbrpw6E+K?=
+To: e.mistiono@gmail.com
+X-Entity-ID: tvB+cKcWBypfEXqnz9F0lA==
+
+
+<!DOCTYPE>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style type="text/css">
+			/* BROWSER SPECIFIC STYLES */
+			body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+			table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+			img { -ms-interpolation-mode: bicubic; }
+
+			/* RESET STYLES */
+			img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+			table { border-collapse: collapse !important; }
+			body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+			/* iOS BLUE LINKS */
+			a[x-apple-data-detectors] {
+				color: inherit !important;
+				text-decoration: none !important;
+				font-size: inherit !important;
+				font-family: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
+			}
+
+			@media screen and (max-width: 480px) {
+				.mobile-hide {
+					display: none !important;
+				}
+				.mobile-center {
+					text-align: center !important;
+				}
+			}
+
+			/* ANDROID CENTER FIX */
+			div[style*="margin: 16px 0;"] { margin: 0 !important; }
+	
+		</style>
+	</head>
+
+	<body style="margin: 0 !important; padding: 0 !important; background-color: #FFFFFF;" bgcolor="#FFFFFF">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+			<tr>
+				<td align="center" style="background-color: #F5F7F8; padding-top:45px;" bgcolor="#F5F7F8">
+				<!--[if (gte mso 9)|(IE)]>
+				<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="background-color: #F5F7F8;"><tr><td align="center" valign="top" width="600">
+				<![endif]-->
+				<!--  EMAIL CONTENT  -->
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; background-color: #FFFFFF;">
+					
+					<!--  HEADER BANNER: BEGIN  -->
+                    
+					<tr>
+						<td align="center" style="font-size:0; padding-bottom: 25px; vertical-align: top;">
+							<a href="https://danacita.co.id" target="_blank" rel="noopener" style="text-decoration: none;">
+    <img align="center" alt="Danacita" border="0" title="Danacita" src="https://storage.googleapis.com/danacita-static-assets/loan_approval_for_student/header.jpg"
+        style="height: auto; width: 100%; max-width: 600px; display: block;" width="600"
+    />
+</a>
+						</td>
+					</tr>
+					<!--  HEADER BANNER: END  -->
+                    
+
+                    
+<!-- BANNER : BEGIN -->
+<tr>
+	<td align="center" style="font-size:0; vertical-align: top;">
+		<img align="center" alt="Danacita" border="0"
+			src="https://storage.googleapis.com/danacita-static-assets/loan_activation/banner.png"
+			style="height: auto; width: 100%; max-width: 600px; display: block; margin:0;" title="Danacita" width="600"
+		/>
+	</td>
+</tr>
+<!-- BANNER : END -->
+<tr>
+	<td align="center" style="font-family: Arial,'Helvetica Neue', Helvetica, sans-serif; padding: 21px 35px;">
+		<h1 style="font-size: 32px; font-weight: 700; line-height: 48px; margin: 0;">
+			Selamat! Biaya Pendidikan Kamu Sudah Berhasil Dibayarkan 🎉
+		</h1>
+	</td>
+</tr>
+<tr>
+	<td style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; padding: 10px 35px"> 
+		<p style="margin: 0;">Hai, <strong>Edi</strong>!</p>
+	</td>
+</tr>
+<tr>
+	<td style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; padding: 8px 35px"> 
+		<p style="margin: 0;">
+			Danacita telah berhasil membayarkan biaya pendidikan kamu ke <strong>Refocus Indonesia</strong> pada <strong>13 Maret 2023</strong> berikut detailnya :
+		</p>
+	</td>
+</tr>
+<tr>
+	<td style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; padding: 8px 35px"> 
+		<p style="line-height: 21px; margin: 0;"><strong>Nama Pelajar</strong>: Edi Mistiono</p>
+		<p style="line-height: 21px; margin: 0;"><strong>Kode Referensi</strong>: HRE7871807</p>
+		<p style="line-height: 21px; margin: 0;"><strong>Institusi Pendidikan</strong>: Refocus Indonesia</p>
+		
+		<p style="line-height: 21px; margin: 0;"><strong>Nominal</strong>: Rp 19,400,000.00</p>
+		<p style="line-height: 21px; margin: 0;"><strong>Status</strong>: Berhasil</p>
+	</td>
+</tr>
+<tr>
+	<td style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; padding: 8px 35px"> 
+		<p style="margin: 0;">
+			<i>Notes : Email ini dapat digunakan sebagai bukti pembayaran ke kampus.</i>
+		</p>
+	</td>
+</tr>
+
+
+                    
+					
+					<tr>
+						<td style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; padding: 40px 35px 20px 35px"> 
+							<p style="margin: 0">Perlu bantuan atau informasi lebih lanjut?</p>
+<p style="margin: 0">Hubungi Whatsapp Danacita, Klik di sini
+  <strong><a href="https://wa.me/6282111724588" target="_blank" rel="noopener" style="text-decoration: none; color: #4587EF;">https://wa.me/6282111724588</a></strong>
+</p>
+<p style="margin: 0">Email: <strong><a href="mailto:info@danacita.co.id" rel="noopener" style="text-decoration: none; color: #4587EF;">info@danacita.co.id</a></strong>
+</p>
+<p style="margin: 0">Atau jadwalkan konsultasi gratis dengan Tim Danacita, klik di sini 
+  <strong><a href="https://danacita.co.id/s/jadwalkansesi" rel="noopener" style="text-decoration: none; color: #4587EF;">https://danacita.co.id/s/jadwalkansesi</a></strong>
+</p>
+						</td>
+					</tr>
+                    
+                    
+					
+					<tr>
+						<td style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 18px; padding:10px 35px 20px 35px"> 
+							<p style="margin: 0">Salam hangat, <br><strong>Danacita</strong></p>
+						</td>
+					</tr>
+                    
+                    
+					
+
+					
+					<!--  FOOTER: BEGIN  -->
+					<tr>
+						<td style="padding-top:10px; background-color: #F5F7F8;" bgcolor="#F5F7F8">
+							<table role="presentation" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td style="padding: 30px 30px; text-align: center;">
+            <table role="presentation" align="center" style="text-align: center;">
+                <tr>
+                    <td>
+                        <a href="https://www.facebook.com/DanaCita.ID/" target="_blank" rel="noopener" style="text-decoration: none;"><img
+                                src="https://storage.googleapis.com/bukas-static-assets/images/logo-facebook.png"
+                                width="32" height="32" style="margin:0; padding:0; border:none; display:block;"
+                                border="0" alt="Facebook" title="Facebook">
+                    </td>
+                    <td width="10">&nbsp;</td>
+                    <td>
+                        <a href="https://twitter.com/Danacita_id/" target="_blank" rel="noopener" style="text-decoration: none;"><img
+                                src="https://storage.googleapis.com/bukas-static-assets/images/logo-twitter.png"
+                                width="32" height="32" style="margin:0; padding:0; border:none; display:block;"
+                                border="0" alt="Twitter" title="Twitter">
+                    </td>
+                    <td width="10">&nbsp;</td>
+                    <td>
+                        <a href="https://www.instagram.com/danacita_id/" target="_blank" rel="noopener"
+                            style="text-decoration: none;"><img
+                                src="https://storage.googleapis.com/bukas-static-assets/images/logo-instagram.png"
+                                width="32" height="32" style="margin:0; padding:0; border:none; display:block;"
+                                border="0" alt="Instagram" title="Instagram">
+                    </td>
+                    <td width="10">&nbsp;</td>
+                    <td>
+                        <a href="https://www.linkedin.com/company/dana-cita/" target="_blank" rel="noopener"
+                            style="text-decoration: none;"><img
+                                src="https://storage.googleapis.com/bukas-static-assets/images/logo-linkedin.png"
+                                width="32" height="32" style="margin:0; padding:0; border:none; display:block;"
+                                border="0" alt="LinkedIn" title="LinkedIn">
+                    </td>
+                    <td width="10">&nbsp;</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+						</td>
+					</tr>
+                    
+					<!--  FOOTER : END  -->
+					
+				</table>
+				<!--[if (gte mso 9)|(IE)]>
+				</td></tr></table>
+				<![endif]-->
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
